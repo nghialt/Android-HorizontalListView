@@ -26,6 +26,11 @@
 // @formatter:on
 package com.meetme.android.horizontallistview;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -50,11 +55,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Scroller;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 
 // @formatter:off
 /**
@@ -1288,6 +1288,14 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         // If the maxx is more then zero then the user can scroll, so the edge effects should be shown
         return mMaxX > 0;
     }
+
+    public int getLeftViewAdapterIndex() {
+		return mLeftViewAdapterIndex;
+	}
+
+    public int getRightViewAdapterIndex() {
+		return mRightViewAdapterIndex;
+	}
 
     @TargetApi(11)
     /** Wrapper class to protect access to API version 11 and above features */
